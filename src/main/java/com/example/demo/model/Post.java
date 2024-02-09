@@ -1,11 +1,18 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 import java.util.Date;
 
+@Entity
 public class Post {
     private String text;
     private Integer likes;
     private Date creationDate;
+    @Id
+    @GeneratedValue
     private Long id;
 
     public String getText(){
@@ -25,5 +32,7 @@ public class Post {
         this.likes = 0;
         this.creationDate = date;
     }
+    public Post() {
 
+    }
 }
